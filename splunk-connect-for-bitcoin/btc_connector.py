@@ -189,8 +189,8 @@ def load_transactions(api_key, time_to_load):
 if __name__ == '__main__':
     load_config('config.yml')
     while(True):
-        time_to_load = int(time.time()) // 600 * 600
-        time_to_load = datetime.fromtimestamp(time_to_load).astimezone(timezone.utc).isoformat()
+        time_to_load = int(time.time() // 600 * 600 - 600)
+        #time_to_load = datetime.fromtimestamp(time_to_load).astimezone(timezone.utc).isoformat()
         load_transactions(api_key, time_to_load)
         logging.info(f'load {time_to_load} transactions finished.')
         time.sleep(600)
