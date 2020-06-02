@@ -35,9 +35,9 @@ logging.basicConfig(level=logging.INFO)
 
 # global variable
 api_key = None
+splunk_btc_txn_index = None
 splunk_http_collector_url = None
-splunk_index = None
-anchain_bei_token = None
+splunk_hec_token = None
 anchain_data_host = None
 
 g_session = None
@@ -46,15 +46,15 @@ g_session = None
 def load_config(file_name):
     global api_key
     global splunk_http_collector_url
-    global splunk_index
-    global anchain_bei_token
+    global splunk_btc_txn_index
+    global splunk_hec_token
     global anchain_data_host
     
     conf = yaml.safe_load(open(file_name, 'r'))
     api_key = conf['apikey']
     splunk_http_collector_url = conf['splunk_http_collector_url']
-    splunk_index = conf['splunk_index']
-    anchain_bei_token = conf['anchain_bei_token']
+    splunk_btc_txn_index = conf['splunk_btc_txn_index']
+    splunk_hec_token = conf['splunk_hec_token']
     anchain_data_host = conf['anchain_data_host']
 
 
@@ -85,13 +85,13 @@ def send_splunk(session, event_data, http_collector):
     if not event_data:
         return
 
-    headers = {'Authorization': f'Splunk {anchain_bei_token}'}
+    headers = {'Authorization': f'Splunk {splunk_hec_token}'}
     _bulk_data = []
     for _event in event_data:
         _bulk_data.append({'event': _event,
                            'time': _event['block_timestamp'],
                            'sourcetype': load_sourcetype(http_collector),
-                           'index': splunk_index})
+                           'index': splunk_btc_txn_index})
     if not _bulk_data:
         logging.warning('No data to send')
         return

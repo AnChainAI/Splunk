@@ -1,5 +1,6 @@
 apikey: RZ6GlXjEGz7VfiUnYJzBqpmzeT8Ijc1NTY0ZTJkLWE4NjctNGEzOS1iZjQwLTA1MTA2NGU0NWRjZSI.G_EaHRvfL14g6rE7td4r9E1wJ-I
-anchain_data_host: https://data.anchainai.com/btc_txns
+anchain_btc_data_host: https://data.anchainai.com/btc_txns
+splunk_btc_txn_index: btc_txns_v1
 splunk_http_collector_url: https://localhost:8088/services/collector
-splunk_index: btc_txns_v1
-anchain_bei_token: d66eb2d3-7ed1-47f0-bdfd-fab47fbb168f
+splunk_hec_token: d66eb2d3-7ed1-47f0-bdfd-fab47fbb168f
+
