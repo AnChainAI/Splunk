@@ -11,4 +11,4 @@ AnChain Splunk Connect for BitCoin ledger data.
 
 This splunk connect fetches AnChain preprocessed data BitCoin data and push into your Splunk instances as http collector events.
 
-For more detailed information. Please refer to [splunk-connect-for-bitcoin/README.md](splunk-connect-for-bitcoin/README.md)
+For more detailed information. Please refer to [splunk-connect-for-bitcoin](splunk-connect-for-bitcoin/)
