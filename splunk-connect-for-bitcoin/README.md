@@ -1,10 +1,19 @@
 # AnChain.AI Splunk Connect for Bitcoin.
 
 # Install
+
 python and pip version 3+ is needed from this program to run.
 
+Install the dependencies on system wide
+
 ```bash
-- pip3 install -r requirements.txt
+sudo pip3 install -r requirements.txt
+```
+
+Or in your virtual environment
+
+```bash
+pip3 install -r requirements.txt
 ```
 
 # Configuration
