@@ -38,7 +38,7 @@ api_key = None
 splunk_btc_txn_index = None
 splunk_http_collector_url = None
 splunk_hec_token = None
-anchain_data_host = None
+anchain_btc_data_host = None
 
 g_session = None
 
@@ -48,14 +48,14 @@ def load_config(file_name):
     global splunk_http_collector_url
     global splunk_btc_txn_index
     global splunk_hec_token
-    global anchain_data_host
+    global anchain_btc_data_host
     
     conf = yaml.safe_load(open(file_name, 'r'))
     api_key = conf['apikey']
     splunk_http_collector_url = conf['splunk_http_collector_url']
     splunk_btc_txn_index = conf['splunk_btc_txn_index']
     splunk_hec_token = conf['splunk_hec_token']
-    anchain_data_host = conf['anchain_data_host']
+    anchain_btc_data_host = conf['anchain_btc_data_host']
 
 
 def get_session():
@@ -120,7 +120,7 @@ def load_data_api(api_key, time_to_load, file_name):
         'time_to_load': time_to_load,
         'file_name': file_name
     }
-    response = requests.post(anchain_data_host, headers=headers, data=json.dumps(payload))
+    response = requests.post(anchain_btc_data_host, headers=headers, data=json.dumps(payload))
     if response.status_code != 200:
         logging.error(f'request file ({file_name}) failed, response code: {response.status_code}')
         return None
