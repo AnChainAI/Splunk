@@ -22,7 +22,7 @@ pip3 install -r requirements.txt
     - default index name: btc_txns_v1
 - create HTTP Event Collector Token for receiving btc transaction data
     - default token name: anchain_bei_token
-    - default token value: d66eb2d3-7ed1-47f0-bdfd-fab47fbb168f
+    - default token value: ac958d63-a095-49f3-bb0b-860253d5c13b
 
 ## [config.yml](config.yml)
 - apikey: required for fetch data from data.anchainai.com. You can also sign up for your own API Key and get more features on https://bei.anchainai.com
