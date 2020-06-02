@@ -1,8 +1,8 @@
-# AnChain BlockChain App for Splunk Enterprise
+# AnChain.AI Blockchain App for Splunk Enterprise
 
-This repo hosts the tools that are needed by the AnChain Splunk App for BlockChain(BitCoin and Ethereum)
+This repo hosts the tools that are needed by the AnChain.AI Splunk App for Blockchain: BitCoin and Ethereum.
 
-The AnChain.AI BlockChain App is an AI-powered, behavior-based intelligence app that connects cryptocurrency wallet addresses and transactions to real-world entities, enabling your business to secure crypto assets, quantify risk, and remain KYC/AML compliant.
+The AnChain.AI Blockchain App is an AI-powered, behavior-based intelligence app that connects cryptocurrency wallet addresses and transactions to real-world entities, enabling your business to secure crypto assets, quantify risk, and remain KYC/AML compliant.
 
 
 ## Splunk Connect for BitCoin
