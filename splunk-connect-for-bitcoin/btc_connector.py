@@ -22,7 +22,8 @@ import json
 import yaml
 import logging
 import requests
-from datetime import datetime
+import time
+from datetime import datetime, timezone
 from dateutil import parser
 from tempfile import TemporaryDirectory
 import zipfile
@@ -186,13 +187,10 @@ def load_transactions(api_key, time_to_load):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print(f'Usage:\n\npython3 {sys.argv[0]} <time_to_load_string: 2020-05-14T01:00:00+00:00>\n')
-        exit(1)
-    
-    time_to_load = parser.parse(sys.argv[1], ignoretz=False).timestamp()
-
     load_config('config.yml')
-    load_transactions(api_key, time_to_load)
-
-    logging.info(f'load {sys.argv[1]} transactions finished.')
+    while():
+        time_to_load = int(time.time()) // 600 * 600
+        time_to_load = datetime.fromtimestamp(time_to_load).astimezone(timezone.utc).isoformat()
+        load_transactions(api_key, time_to_load)
+        logging.info(f'load {sys.argv[1]} transactions finished.')
+        time.sleep(600)
